@@ -1,0 +1,17 @@
+
+<!-- this is valid template statement  it will log undefined cause argument is optional-->
+<button #Answer1 (click)="log();">Text 1</button>
+
+
+<!-- this is not valid template statement
+we can not use js built in object directly in the template statement
+-->
+  <button #Answer2 (click)="log3(Math.max(1,2))">Text 2</button>
+
+  <!-- this is valid template statement we cant pass here string args cause function accepts htmlElement -->
+  <button #Answer3 (click)="log('1','2')">Text 3</button>
+  <!-- solution for answer 3 -->
+  <button #Answer3 (click)="log2('1','2')">Text 3</button>
+
+<!-- this is also a valid statement cause we are passing answer1 reference i.e. Answer1 element -->
+  <button #Answer4 (click)="log(Answer1)">Text 4</button>
